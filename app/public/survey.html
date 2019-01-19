@@ -223,7 +223,9 @@
                     contentType: "application/json",
                     dataType: "json"
                 }).then(function (res) {
-                    console.log(res);
+                    console.log("***********response")
+                    console.log(res.photo);
+                    console.log("***********response")
                     if (res.closest === "") {
                         $("#exampleModalLabel").text("Hey First visitor");
                         $(".modal-body").text("Welcome to our dating site. You are our first visitor. We will notify you as soon as we find a good match");
