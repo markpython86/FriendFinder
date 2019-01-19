@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Survey</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <!-- Google Fonts and Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Your new friend</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="friendname"></p>
+                    <img id="friendphoto" src="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container " style="margin-bottom: 21px;">
+        <h1 class="text-center">Answer the following questions to find a new friend!</h1>
+        <hr>
+
+        <div class="jumbotron">
+            <div class="page-header text-center">
+                <h1>Survey Form</h1>
+            </div>
+            <hr>
+            <form>
+                <h3>Name (Required)</h3>
+
+                <input type="text" id="username" class="form-control" required>
+                <br>
+                <h3>Link to Photo Image (Required)</h3>
+
+                <input type="text" id="photo" class="form-control" required>
+
+                <hr>
+                <h4>I experience my emotions intensely.</h4>
+                <select id="q1" name="">
+                    <option value="1">Do not agree</option>
+                    <option value="2">Mostly do not agree</option>
+                    <option value="3">Sometimes agree and sometimes disagree</option>
+                    <option value="4">Mostly agree</option>
+                    <option value="5">Completely agree</option>
+                </select>
+                <br><br>
+                <h4>I like to solve complex problems.</h4>
+                <select id="q2" name="">
+                    <option value="1">Do not agree</option>
+                    <option value="2">Mostly do not agree</option>
+                    <option value="3">Sometimes agree and sometimes disagree</option>
+                    <option value="4">Mostly agree</option>
+                    <option value="5">Completely agree</option>
+                </select>
+                <br><br>
+                <h4>I dislike being the center of attention.</h4>
+                <select id="q3" name="">
+                    <option value="1">Do not agree</option>
+                    <option value="2">Mostly do not agree</option>
+                    <option value="3">Sometimes agree and sometimes disagree</option>
+                    <option value="4">Mostly agree</option>
+                    <option value="5">Completely agree</option>
+                </select>
+                <br><br>
+                <h4>I am afraid that I will do the wrong thing.</h4>
+                <select id="q4" name="">
+                    <option value="1">Do not agree</option>
+                    <option value="2">Mostly do not agree</option>
+                    <option value="3">Sometimes agree and sometimes disagree</option>
+                    <option value="4">Mostly agree</option>
+                    <option value="5">Completely agree</option>
+                </select>
+                <br><br>
+                <h4>I don't know why I do some of the things I do.</h4>
+                <select id="q5" name="">
+                    <option value="1">Do not agree</option>
+                    <option value="2">Mostly do not agree</option>
+                    <option value="3">Sometimes agree and sometimes disagree</option>
+                    <option value="4">Mostly agree</option>
+                    <option value="5">Completely agree</option>
+                </select>
+                <br><br>
+                <h4>I talk to a lot of different people at parties.</h4>
+                <select id="q6" name="">
+                    <option value="1">Do not agree</option>
+                    <option value="2">Mostly do not agree</option>
+                    <option value="3">Sometimes agree and sometimes disagree</option>
+                    <option value="4">Mostly agree</option>
+                    <option value="5">Completely agree</option>
+                </select>
+                <br><br>
+                <h4>I believe that there is no absolute right and wrong.</h4>
+                <select id="q7" name="">
+                    <option value="1">Do not agree</option>
+                    <option value="2">Mostly do not agree</option>
+                    <option value="3">Sometimes agree and sometimes disagree</option>
+                    <option value="4">Mostly agree</option>
+                    <option value="5">Completely agree</option>
+                </select>
+                <br><br>
+                <h4>I believe that others have good intentions.</h4>
+                <select id="q8" name="">
+                    <option value="1">Do not agree</option>
+                    <option value="2">Mostly do not agree</option>
+                    <option value="3">Sometimes agree and sometimes disagree</option>
+                    <option value="4">Mostly agree</option>
+                    <option value="5">Completely agree</option>
+                </select>
+                <br><br>
+                <h4>I feel sympathy for those who are worse off than myself.</h4>
+                <select id="q9" name="">
+                    <option value="1">Do not agree</option>
+                    <option value="2">Mostly do not agree</option>
+                    <option value="3">Sometimes agree and sometimes disagree</option>
+                    <option value="4">Mostly agree</option>
+                    <option value="5">Completely agree</option>
+                </select>
+                <br><br>
+                <h4>I see beauty in things that others might not notice.</h4>
+                <select id="q10" name="">
+                    <option value="1">Do not agree</option>
+                    <option value="2">Mostly do not agree</option>
+                    <option value="3">Sometimes agree and sometimes disagree</option>
+                    <option value="4">Mostly agree</option>
+                    <option value="5">Completely agree</option>
+                </select>
+                <br><br>
+                <button id="submit" class="btn btn-primary btn-lg btn-block" type="submit" name="button"><i class="fas fa-check-circle"></i>
+                    Find Friend</button>
+            </form>
+        </div>
+
+        <hr>
+        <a href="/friends">API Friends List</a>
+        <p style="display: inline; margin: 10px;">|</p>
+        <a href="https://github.com/markpython86/FriendFinder">Github Repo</a>
+
+    </div>
+    <script>
+
+        document.getElementById('submit').addEventListener('click', function (e) {
+            e.preventDefault()
+            var myValues = []
+            var frienddata = {}
+            frienddata.name = $("#username").val();
+            frienddata.photo = $("#photo").val();
+            myValues.push(parseInt(document.getElementById('q1').value))
+            myValues.push(parseInt(document.getElementById('q2').value))
+            myValues.push(parseInt(document.getElementById('q3').value))
+            myValues.push(parseInt(document.getElementById('q4').value))
+            myValues.push(parseInt(document.getElementById('q5').value))
+            myValues.push(parseInt(document.getElementById('q6').value))
+            myValues.push(parseInt(document.getElementById('q7').value))
+            myValues.push(parseInt(document.getElementById('q8').value))
+            myValues.push(parseInt(document.getElementById('q9').value))
+            myValues.push(parseInt(document.getElementById('q10').value))
+            frienddata.scores = myValues;
+
+            console.log(frienddata);
+
+            $.post("/api/tables", frienddata, function (data) {
+                console.log(data);
+                $("#friendname").text(data.name);
+                $("#friendphoto").attr("src", data.photo);
+                $("#myModal").modal("toggle");
+
+            });
+
+
+        })
+        document.getElementById('home').addEventListener('click', function () {
+            location.href = '.'
+        })
+    </script>
+    <style>
+        #submit {
+            display: block;
+            margin-top: 40px;
+        }
+    </style>
+</body>
+
+</html>
