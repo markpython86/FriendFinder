@@ -1,12 +1,9 @@
 body{
     font-family: 'Roboto', sans-serif, Georgia;
 }
-.jumbotron h1{
-    font-size: 4.5rem;
+h1{
+    font-size: 4.5rem !important;
 
-}
-h3{
-    font-weight:700;
 }
 
 .container-fluid {
@@ -25,7 +22,3 @@ a.btn.btn-lg.home-btn {
     width: 100%;
     margin: 15px;
 }
-
-
-
-

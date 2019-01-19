@@ -1,208 +1,274 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Survey</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-        crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style/style.css">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-        crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
-    <!-- Google Fonts and Font Awesome -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
         crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 
 </head>
 
 <body>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel">Your new friend</h4>
-                </div>
-                <div class="modal-body">
-                    <p id="friendname"></p>
-                    <img id="friendphoto" src="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container " style="margin-bottom: 21px;">
-        <h1 class="text-center">Answer the following questions to find a new friend!</h1>
-        <hr>
-
+    <div class="container">
+        <h1>Survey Questions</h1>
+        <hr class="my-4">
         <div class="jumbotron">
-            <div class="page-header text-center">
-                <h1>Survey Form</h1>
-            </div>
-            <hr>
-            <form>
-                <h3>Name (Required)</h3>
-
-                <input type="text" id="username" class="form-control" required>
-                <br>
-                <h3>Link to Photo Image (Required)</h3>
-
-                <input type="text" id="photo" class="form-control" required>
-
+            <form id="surveyForm" name="surveyForm" class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label for="nameInput">Name(Required)</label>
+                    <input id="name" name="name" type="text" class="form-control" id="nameInput" placeholder="name"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="imgInput">Link to Photo Image (Required)</label>
+                    <input id="imgURL" name="imgURL" type="text" class="form-control" id="imgInput" placeholder="http://..."
+                        required>
+                </div>
                 <hr>
-                <h4>I experience my emotions intensely.</h4>
-                <select id="q1" name="">
-                    <option value="1">Do not agree</option>
-                    <option value="2">Mostly do not agree</option>
-                    <option value="3">Sometimes agree and sometimes disagree</option>
-                    <option value="4">Mostly agree</option>
-                    <option value="5">Completely agree</option>
-                </select>
-                <br><br>
-                <h4>I like to solve complex problems.</h4>
-                <select id="q2" name="">
-                    <option value="1">Do not agree</option>
-                    <option value="2">Mostly do not agree</option>
-                    <option value="3">Sometimes agree and sometimes disagree</option>
-                    <option value="4">Mostly agree</option>
-                    <option value="5">Completely agree</option>
-                </select>
-                <br><br>
-                <h4>I dislike being the center of attention.</h4>
-                <select id="q3" name="">
-                    <option value="1">Do not agree</option>
-                    <option value="2">Mostly do not agree</option>
-                    <option value="3">Sometimes agree and sometimes disagree</option>
-                    <option value="4">Mostly agree</option>
-                    <option value="5">Completely agree</option>
-                </select>
-                <br><br>
-                <h4>I am afraid that I will do the wrong thing.</h4>
-                <select id="q4" name="">
-                    <option value="1">Do not agree</option>
-                    <option value="2">Mostly do not agree</option>
-                    <option value="3">Sometimes agree and sometimes disagree</option>
-                    <option value="4">Mostly agree</option>
-                    <option value="5">Completely agree</option>
-                </select>
-                <br><br>
-                <h4>I don't know why I do some of the things I do.</h4>
-                <select id="q5" name="">
-                    <option value="1">Do not agree</option>
-                    <option value="2">Mostly do not agree</option>
-                    <option value="3">Sometimes agree and sometimes disagree</option>
-                    <option value="4">Mostly agree</option>
-                    <option value="5">Completely agree</option>
-                </select>
-                <br><br>
-                <h4>I talk to a lot of different people at parties.</h4>
-                <select id="q6" name="">
-                    <option value="1">Do not agree</option>
-                    <option value="2">Mostly do not agree</option>
-                    <option value="3">Sometimes agree and sometimes disagree</option>
-                    <option value="4">Mostly agree</option>
-                    <option value="5">Completely agree</option>
-                </select>
-                <br><br>
-                <h4>I believe that there is no absolute right and wrong.</h4>
-                <select id="q7" name="">
-                    <option value="1">Do not agree</option>
-                    <option value="2">Mostly do not agree</option>
-                    <option value="3">Sometimes agree and sometimes disagree</option>
-                    <option value="4">Mostly agree</option>
-                    <option value="5">Completely agree</option>
-                </select>
-                <br><br>
-                <h4>I believe that others have good intentions.</h4>
-                <select id="q8" name="">
-                    <option value="1">Do not agree</option>
-                    <option value="2">Mostly do not agree</option>
-                    <option value="3">Sometimes agree and sometimes disagree</option>
-                    <option value="4">Mostly agree</option>
-                    <option value="5">Completely agree</option>
-                </select>
-                <br><br>
-                <h4>I feel sympathy for those who are worse off than myself.</h4>
-                <select id="q9" name="">
-                    <option value="1">Do not agree</option>
-                    <option value="2">Mostly do not agree</option>
-                    <option value="3">Sometimes agree and sometimes disagree</option>
-                    <option value="4">Mostly agree</option>
-                    <option value="5">Completely agree</option>
-                </select>
-                <br><br>
-                <h4>I see beauty in things that others might not notice.</h4>
-                <select id="q10" name="">
-                    <option value="1">Do not agree</option>
-                    <option value="2">Mostly do not agree</option>
-                    <option value="3">Sometimes agree and sometimes disagree</option>
-                    <option value="4">Mostly agree</option>
-                    <option value="5">Completely agree</option>
-                </select>
-                <br><br>
-                <button id="submit" class="btn btn-primary btn-lg btn-block" type="submit" name="button"><i class="fas fa-check-circle"></i>
-                    Find Friend</button>
+                <p>Qustion 1</p>
+                <div class="form-group">
+                    <label for="formQuestion1">I believe in the importance of art.</label>
+                    <select name="q1" class="form-control" id="formQuestion1" required>
+                        <option value="" selected>Choose an answer</option>
+                        <option value="1">1(Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5(Strongly Agree)</option>
+                    </select>
+                </div>
+                <p>Qustion 2</p>
+                <div class="form-group">
+                    <label for="formQuestion2">I experience my emotions intensely.</label>
+                    <select name="q2" class="form-control" id="formQuestion2" required>
+                        <option value="" selected>Choose an answer</option>
+                        <option value="1">1(Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5(Strongly Agree)</option>
+                    </select>
+                </div>
+                <p>Qustion 3</p>
+                <div class="form-group">
+                    <label for="formQuestion3">I like to solve complex problems.</label>
+                    <select name="q3" class="form-control" id="formQuestion3" required>
+                        <option value="" selected>Choose an answer</option>
+                        <option value="1">1(Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5(Strongly Agree)</option>
+                    </select>
+                </div>
+                <p>Qustion 4</p>
+                <div class="form-group">
+                    <label for="formQuestion4">I dislike being the center of attention.</label>
+                    <select name="q4" class="form-control" id="formQuestion4" required>
+                        <option value="" selected>Choose an answer</option>
+                        <option value="1">1(Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5(Strongly Agree)</option>
+                    </select>
+                </div>
+                <p>Qustion 5</p>
+                <div class="form-group">
+                    <label for="formQuestion5">People can rarely upset you.</label>
+                    <select name="q5" class="form-control" id="formQuestion5" required>
+                        <option value="" selected>Choose an answer</option>
+                        <option value="1">1(Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5(Strongly Agree)</option>
+                    </select>
+                </div>
+                <p>Qustion 6</p>
+                <div class="form-group">
+                    <label for="formQuestion6">It is often difficult for you to relate to other people’s feelings.</label>
+                    <select name="q6" class="form-control" id="formQuestion6" required>
+                        <option value="" selected>Choose an answer</option>
+                        <option value="1">1(Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5(Strongly Agree)</option>
+                    </select>
+                </div>
+                <p>Qustion 7</p>
+                <div class="form-group">
+                    <label for="formQuestion7">I don't know why I do some of the things I do.</label>
+                    <select name="q7" class="form-control" id="formQuestion7" required>
+                        <option value="" selected>Choose an answer</option>
+                        <option value="1">1(Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5(Strongly Agree)</option>
+                    </select>
+                </div>
+                <p>Qustion 8</p>
+                <div class="form-group">
+                    <label for="formQuestion8">I talk to a lot of different people at parties.</label>
+                    <select name="q8" class="form-control" id="formQuestion8" required>
+                        <option value="" selected>Choose an answer</option>
+                        <option value="1">1(Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5(Strongly Agree)</option>
+                    </select>
+                </div>
+                <p>Qustion 9</p>
+                <div class="form-group">
+                    <label for="formQuestion9">I believe that there is no absolute right and wrong.</label>
+                    <select name="q9" class="form-control" id="formQuestion9" required>
+                        <option value="" selected>Choose an answer</option>
+                        <option value="1">1(Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5(Strongly Agree)</option>
+                    </select>
+                </div>
+                <p>Qustion 10</p>
+                <div class="form-group">
+                    <label for="formQuestion10">I feel sympathy for those who are worse off than myself.</label>
+                    <select name="q10" class="form-control" id="formQuestion10" required>
+                        <option value="" selected>Choose an answer</option>
+                        <option value="1">1(Strongly Disagree)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5(Strongly Agree)</option>
+                    </select>
+                </div>
+                <button id="submitSurveyBtn" type="submit" class="btn btn-primary"><i class="far fa-check-circle"></i>
+                    Submit</button>
+                <br>
+                <br>
+                <br>
             </form>
         </div>
 
-        <hr>
-        <a href="/friends">API Friends List</a>
-        <p style="display: inline; margin: 10px;">|</p>
-        <a href="https://github.com/markpython86/FriendFinder">Github Repo</a>
 
-    </div>
-    <script>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Your Best Match is..</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="" id="imagepreview" style="width: 400px; height: 264px;">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <p>
+                    <a href="/api/friends">API Friends List</a> |
+                    <a href="https://github.com/markpython86/FriendFinder">GitHub Repo</a>
+                </p>
+            </div>
+        </footer>
 
-        document.getElementById('submit').addEventListener('click', function (e) {
-            e.preventDefault()
-            var myValues = []
-            var frienddata = {}
-            frienddata.name = $("#username").val();
-            frienddata.photo = $("#photo").val();
-            myValues.push(parseInt(document.getElementById('q1').value))
-            myValues.push(parseInt(document.getElementById('q2').value))
-            myValues.push(parseInt(document.getElementById('q3').value))
-            myValues.push(parseInt(document.getElementById('q4').value))
-            myValues.push(parseInt(document.getElementById('q5').value))
-            myValues.push(parseInt(document.getElementById('q6').value))
-            myValues.push(parseInt(document.getElementById('q7').value))
-            myValues.push(parseInt(document.getElementById('q8').value))
-            myValues.push(parseInt(document.getElementById('q9').value))
-            myValues.push(parseInt(document.getElementById('q10').value))
-            frienddata.scores = myValues;
+</body>
 
-            console.log(frienddata);
+<script>
 
-            $.post("/api/tables", frienddata, function (data) {
-                console.log(data);
-                $("#friendname").text(data.name);
-                $("#friendphoto").attr("src", data.photo);
-                $("#myModal").modal("toggle");
+    $(document).ready(function () {
+        // let validity = true;
 
+        $("#surveyForm").on("submit", function (e) {
+            e.preventDefault();
+            var isValid = true;
+            $("input" && "select").each(function () {
+                var element = $(this);
+                if (element.val() == "") {
+                    isValid = false;
+                }
             });
 
+            if (isValid) {
+                var formData = JSON.stringify($(this).serializeArray());
+                console.log(formData);
+                $.ajax({
+                    url: "/api/friends",
+                    type: "POST",
+                    data: formData,
+                    contentType: "application/json",
+                    dataType: "json"
+                }).then(function (res) {
+                    console.log(res);
+                    if (res.closest === "") {
+                        $("#exampleModalLabel").text("Hey First visitor");
+                        $(".modal-body").text("Welcome to our dating site. You are our first visitor. We will notify you as soon as we find a good match");
+                        $("#exampleModal").modal('show');
+                    } else {
+                        $("#exampleModalLabel").text("Your Best Match is..");
+                        $(".modal-body").empty();
+                        $(".modal-body").append("<p>" + res.closest + "</p>");
+                        var img = $("<img>");
+                        img.attr("src", res.photo);
+                        img.attr("style", "width: 300px; height: 264px;");
+                        $(".modal-body").append(img);
+                        $("#exampleModal").modal('show');
+                    }
 
-        })
-        document.getElementById('home').addEventListener('click', function () {
-            location.href = '.'
-        })
-    </script>
-    <style>
-        #submit {
-            display: block;
-            margin-top: 40px;
-        }
-    </style>
-</body>
+                });
+            } else {
+                alert("Please fix the highlighted fields");
+            }
+        });
+
+
+        // function validateForm(){
+        (function () {
+            'use strict';
+
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            // validity = false;
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+
+    });
+
+</script>
 
 </html>
