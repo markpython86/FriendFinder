@@ -28,7 +28,7 @@ Live Heroku Link: https://friendfinder86.herokuapp.com
   * bodyParser
   
 ### Getting Started
-1. Clone repository bamazon using the code -> _git clone https://github.com/markpython86/FriendFinder.git_
+1. Clone repository FriendFinder using the code -> _git clone https://github.com/markpython86/FriendFinder.git_
 1. Open a terminal session for the directory where the application was cloned to
 1. run *npm install* to install all the dependencies
 1. Then run node server.js in the terminal. Copy _https://localhost:8080_ and paste in your fav browser to see app.
